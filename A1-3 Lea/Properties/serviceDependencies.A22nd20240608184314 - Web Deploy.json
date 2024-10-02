@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/A22nd20240608184314/providers/Microsoft.ServiceLinker/linkers/ConnectionStringsMallStoreDbContextConne_E8E76E9429",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/a22nddbserver/databases/A22nd_db",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:MallStoreDbContextConnection",
+      "dynamicId": null
+    }
+  }
+}

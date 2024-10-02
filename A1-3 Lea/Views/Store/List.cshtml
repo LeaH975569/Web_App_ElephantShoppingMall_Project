@@ -1,0 +1,27 @@
+﻿@model StoreListViewModel
+
+@{
+    ViewData["Title"] = "Store List";
+}
+
+<h1 style="display: flex; justify-content: space-between; align-items: center;">
+    <div>
+        @Model.CurrentCategory
+        &nbsp;
+        <a asp-controller="Store" asp-action="List" asp-route-sortOrder="@ViewBag.NameSortParam" class="text-muted" style="font-size: medium;">
+            Sort by Name
+        </a>
+        &nbsp;
+        <a asp-controller="Store" asp-action="List" asp-route-sortOrder="@ViewBag.CategorySortParam" class="text-muted" style="font-size: medium;">
+            Sort by Category
+        </a>
+    </div>
+    <a class="btn btn-success" asp-controller="Store" asp-action="Create">Create New Store</a>
+</h1>
+
+<div class="row">
+    @foreach (var store in Model.Stores)
+    {
+        <partial name="_StoreCard" model="store" />
+    }
+</div>

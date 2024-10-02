@@ -1,0 +1,20 @@
+﻿@model Store
+<br />
+<br />
+<h2>Delete Store</h2>
+<br />
+<h3>Are you sure you want to delete this store?</h3>
+<div class="row gx-5">
+
+    <img alt="@Model.Name" src="@Model.ImageThumbnailUrl" class="img-fluid col-5" />
+    <div class="col-7">
+        <p>@Model.LongDescription</p>
+
+    </div>
+</div>
+<br />
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="StoreId" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="List" class="btn btn-secondary">Cancel</a>
+</form>

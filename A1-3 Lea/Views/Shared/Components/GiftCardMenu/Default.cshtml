@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Store>
+
+<ul class="dropdown-menu">
+    @foreach (var store in Model)
+    {
+        <li>
+            <a asp-controller="GiftCard" asp-action="List"
+               asp-route-category="@store.Name"
+               class="dropdown-item">
+                @store.Name
+            </a>
+        </li>
+    }
+    <li>
+        <a asp-controller="GiftCard" asp-action="List" asp-route-Category="" class="dropdown-item">All stores</a>
+    </li>
+</ul>

@@ -1,0 +1,31 @@
+﻿@model GiftCard
+
+<h3 class="pull-right">@Model.GiftCardPrice.ToString("c")</h3>
+
+<div class="addToCart">
+    <p class="button">
+        <a class="btn btn-secondary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart"
+           asp-route-giftCardid="@Model.GiftCardId">Add to cart</a>
+    </p>
+
+</div>
+
+
+@*
+<div class="row gx-5">
+
+    <img alt="@Model.Name" src="@Model.ImageThumbnailUrl" class="img-fluid col-5" />
+    <div class="col-7">
+        <h4>@Model.ShortDescription</h4>
+        <p>@Model.LongDescription</p>
+        <h3 class="pull-right">@Model.GiftCardPrice.ToString("c")</h3>
+        <div class="addToCart">
+            <p class="button">
+                <a class="btn btn-secondary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart"
+                   asp-route-pieid="@Model.PieId">Add to cart</a>
+            </p>
+
+        </div>
+    </div>
+</div>
+*@

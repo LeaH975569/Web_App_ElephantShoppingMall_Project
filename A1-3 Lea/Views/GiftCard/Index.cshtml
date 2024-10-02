@@ -1,0 +1,46 @@
+﻿@model GiftCardViewModel
+
+<h3 class="my-5">Purchase a gift card</h3>
+
+<div class="row">
+    <div class="col-md-4">
+        <img src="Images/GiftCard.jpg" class="rounded img-fluid" style="width:100%; height:auto;" />
+    </div>
+    <div class="col-md-8">
+        <form asp-action="Checkout" method="post" role="form">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label for="storeSelect" class="control-label">Store</label>
+                <select id="storeSelect" name="SelectedStoreId" class="form-control" required>
+                    <option value="">Select a store for the giftcard</option>
+                    @foreach (var store in Model.Stores)
+                    {
+                        <option value="@store.StoreId">@store.Name</option>
+                    }
+                </select>
+                <span asp-validation-for="SelectedStoreId" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="giftCardSelect" class="control-label">Gift Card Value</label>
+                <select id="giftCardSelect" name="SelectedGiftCardId" class="form-control" required>
+                    <option value="">Select a Gift Card value</option>
+                    @foreach (var giftCard in Model.GiftCards)
+                    {
+                        <option value="@giftCard.GiftCardId">@giftCard.GiftCardPrice.ToString("c")</option>
+                    }
+                </select>
+                <span asp-validation-for="SelectedGiftCardId" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="GiftCardDescription" class="control-label">Message</label>
+                <p>If you need to write a message for the giftcard!</p>
+                <input asp-for="GiftCardDescription" class="form-control" />
+                <span asp-validation-for="GiftCardDescription" class="text-danger"></span>
+            </div>
+            <br />
+            <button type="submit" class="btn btn-secondary" asp-controller="Giftcard" asp-action="Index" name="selectedGiftCardId" value="@Model.SelectedGiftCardId" name="selectedStoreId" value="@Model.SelectedStoreId"><h4>Go to checkout</h4></button>
+        </form>
+    </div>
+</div>

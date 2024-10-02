@@ -1,0 +1,10 @@
+﻿@model GiftCardListViewModel
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+    @foreach (var giftCard in Model.GiftCards)
+    {
+        <partial name="_GiftCardCard" model="giftCard" />
+    }
+
+</div>
